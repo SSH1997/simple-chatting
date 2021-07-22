@@ -5,7 +5,7 @@ const path = require('path');
 const logger = require('morgan');
 const cors = require('cors');
 
-// const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 const socketServer = require('./socket');
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
