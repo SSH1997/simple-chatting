@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const App: React.FC = () => <div>Wepback-Typescript-React-boilerplate</div>;
+import LoginPage from './Components/LoginPage';
+import MainPage from './Components/MainPage';
+
+const App: React.FC = () => {
+  const [nickName, setNickName] = useState(localStorage.getItem('NickName'));
+  return !nickName ? <LoginPage /> : <MainPage />;
+};
 export default App;
